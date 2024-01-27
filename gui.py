@@ -13,11 +13,11 @@ edit_btn = PySimpleGUI.Button("edit")
 complete_btn = PySimpleGUI.Button("Complete")
 exit_btn = PySimpleGUI.Button("Exit")
 
+col1 = PySimpleGUI.Column([[input_label], [list_box]])
+col2 = PySimpleGUI.Column([[add_button], [edit_btn], [complete_btn], [exit_btn]])
 window = PySimpleGUI.Window('My To Do App',
                             layout=[[clock], [label],
-                                    [input_label, add_button],
-                                    [list_box, edit_btn, complete_btn],
-                                    [exit_btn]],
+                                    [col1, col2]],
                             font=('Helvetica', 12))
 while True:
     event, values = window.read(timeout=10)
